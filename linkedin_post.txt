@@ -1,0 +1,19 @@
+Task 01 done at @Velsync! 🚀
+
+I built my personal portfolio website as part of my Full Stack Web Development internship.
+
+What's inside:
+✅ Responsive design for mobile and desktop
+✅ Dark/light theme toggle
+✅ Animated skill bars and typing effect
+✅ Project showcase and contact form with validation
+
+Built with HTML, CSS and JavaScript only, no frameworks.
+
+What I learned: structuring a page with semantic HTML, theming with CSS variables, and using IntersectionObserver for scroll animations.
+
+GitHub: <paste your repo link>
+
+On to Task 02, a To-Do app with CRUD! 💻
+
+#Velsync #FullStackDevelopment #WebDevelopment #HTML #CSS #JavaScript #Internship

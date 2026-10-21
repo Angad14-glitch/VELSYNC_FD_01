@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Angad - Web Developer, Data Analytics and Project Coordinator. BSc IT student at Mumbai University." />
+  <title>Angad | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#home" class="logo">Angad<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+    <nav id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">&#9680;</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Angad</h1>
+      <h2>I'm a <span id="typed" class="typed"></span><span class="cursor">|</span></h2>
+      <p class="lead">BSc IT student building practical software tools, from web apps to data dashboards.</p>
+      <div class="cta">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn ghost">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <h3 class="section-title">About Me</h3>
+      <div class="about-grid">
+        <p>
+          I'm a BSc Information Technology student at Mumbai University, based near Mumbai.
+          I enjoy turning ideas into small, useful software: web apps, security demos and
+          data tools. I work across web development, data analytics and project coordination,
+          and I like learning by building.
+        </p>
+        <ul class="facts">
+          <li><strong>Location:</strong> Thane, Maharashtra</li>
+          <li><strong>Studying:</strong> BSc IT, Mumbai University</li>
+          <li><strong>Focus:</strong> Web, Python, Data</li>
+          <li><strong>Currently:</strong> Intern at Velsync</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal">
+      <h3 class="section-title">Skills</h3>
+      <div class="skills">
+        <div class="skill" data-level="85"><span>HTML / CSS</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="75"><span>JavaScript</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="80"><span>Python</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="75"><span>Streamlit</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="65"><span>Java</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="70"><span>SQL</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="80"><span>MS Excel</span><div class="bar"><i></i></div></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h3 class="section-title">Projects</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>SecretVault</h4>
+          <p>A Python + Streamlit web app that encrypts and decrypts messages with a secret key. Includes a random key generator and an explainer of the classic A=1 to Z=26 cipher. Deployed on Streamlit Community Cloud.</p>
+          <div class="tags"><span>Python</span><span>Streamlit</span><span>Cryptography</span></div>
+          <a href="#" class="link">View project &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h4>Jarvis Gesture Assistant</h4>
+          <p>A Jarvis-style assistant controlled by hand gestures through the webcam. Recognises fist, palm, peace, thumbs, pinch and pointing per hand, with voice commands and reminders.</p>
+          <div class="tags"><span>Python</span><span>MediaPipe</span><span>OpenCV</span></div>
+          <a href="#" class="link">View project &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h4>Campus Voting Web Application</h4>
+          <p>A web application built in 2024 that lets students cast votes online for campus elections.</p>
+          <div class="tags"><span>Web</span><span>2024</span></div>
+          <a href="#" class="link">View project &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h4>AI Code Detection Tool</h4>
+          <p>A hackathon project from 2024 that explores detecting AI-generated code.</p>
+          <div class="tags"><span>AI</span><span>Hackathon</span><span>2024</span></div>
+          <a href="#" class="link">View project &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section reveal">
+      <h3 class="section-title">Education</h3>
+      <div class="timeline">
+        <div class="t-item">
+          <span class="t-date">2024 - Present</span>
+          <h4>BSc Information Technology</h4>
+          <p>Mumbai University. Sem 4 CGPA: 8.41.</p>
+        </div>
+        <div class="t-item">
+          <span class="t-date">2026</span>
+          <h4>Intern, Full Stack Web Development</h4>
+          <p>Velsync Internships. Building five projects from portfolio to e-commerce store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <h3 class="section-title">Contact</h3>
+      <form id="contactForm" class="form" novalidate>
+        <label>Name
+          <input type="text" id="name" placeholder="Your name" required />
+        </label>
+        <label>Email
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </label>
+        <label>Message
+          <textarea id="message" rows="5" placeholder="Say hello..." required></textarea>
+        </label>
+        <button type="submit" class="btn primary">Send Message</button>
+        <p id="formStatus" class="status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Angad. Built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
