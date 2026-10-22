@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Angad - Web Developer, Data Analytics and Project Coordinator. BSc IT student at Mumbai University." />
   <title>Angad | Web Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
 
   <header class="nav">
     <a href="#home" class="logo">Angad<span>.</span></a>
@@ -18,20 +24,63 @@
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
-      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">&#9680;</button>
+      <div class="theme-selector">
+        <button id="themeBtn" class="theme-btn" aria-label="Toggle theme" title="Switch theme">&#9680;</button>
+        <select id="themeSelect" class="theme-select" aria-label="Select theme variant" title="Theme variant">
+          <option value="ocean" selected>Ocean</option>
+          <option value="sunset">Sunset</option>
+          <option value="forest">Forest</option>
+          <option value="midnight">Midnight</option>
+        </select>
+      </div>
     </nav>
   </header>
 
   <main>
     <!-- HERO -->
     <section id="home" class="hero">
-      <p class="eyebrow">Hello, I'm</p>
-      <h1>Angad</h1>
-      <h2>I'm a <span id="typed" class="typed"></span><span class="cursor">|</span></h2>
-      <p class="lead">BSc IT student building practical software tools, from web apps to data dashboards.</p>
-      <div class="cta">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn ghost">Get in Touch</a>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Angad</h1>
+          <h2>I'm a <span id="typed" class="typed"></span><span class="cursor">|</span></h2>
+          <p class="lead">BSc IT student building practical software tools, from web apps to data dashboards.</p>
+          <div class="cta">
+            <a href="#projects" class="btn primary"><span>View Projects</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="#contact" class="btn ghost">Get in Touch</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num" data-target="4">5</span><span class="stat-label">Projects</span></div>
+            <div class="stat"><span class="stat-num" data-target="7">5</span><span class="stat-label">Skills</span></div>
+            <div class="stat"><span class="stat-num" data-target="8">8.41</span><span class="stat-label">CGPA</span></div>
+            <div class="stat"><span class="stat-num" data-target="2024">2024</span><span class="stat-label">Since</span></div>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <div class="image-frame">
+            <img id="profileImg" src="" alt="Angad - Web Developer" class="profile-img" />
+            <div class="image-placeholder" id="imagePlaceholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/></svg>
+              <span>Add Photo</span>
+              <input type="file" id="imageUpload" accept="image/*" hidden />
+            </div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+          </div>
+          <div class="floating-badge badge-1"><span>Python</span></div>
+          <div class="floating-badge badge-2"><span>JavaScript</span></div>
+          <div class="floating-badge badge-3"><span>Data</span></div>
+          <div class="floating-badge badge-4"><span>Web</span></div>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       </div>
     </section>
 
@@ -39,82 +88,196 @@
     <section id="about" class="section reveal">
       <h3 class="section-title">About Me</h3>
       <div class="about-grid">
-        <p>
-          I'm a BSc Information Technology student at Mumbai University, based near Mumbai.
-          I enjoy turning ideas into small, useful software: web apps, security demos and
-          data tools. I work across web development, data analytics and project coordination,
-          and I like learning by building.
-        </p>
-        <ul class="facts">
-          <li><strong>Location:</strong> Thane, Maharashtra</li>
-          <li><strong>Studying:</strong> BSc IT, Mumbai University</li>
-          <li><strong>Focus:</strong> Web, Python, Data</li>
-          <li><strong>Currently:</strong> Intern at Velsync</li>
-        </ul>
+        <div class="about-text">
+          <p>
+            I'm a BSc Information Technology student at Mumbai University, based near Mumbai.
+            I enjoy turning ideas into small, useful software: web apps, security demos and
+            data tools. I work across web development, data analytics and project coordination,
+            and I like learning by building.
+          </p>
+          <p>
+            Currently interning at <strong>Velsync</strong> where I'm building five full-stack projects
+            ranging from portfolio sites to e-commerce stores. When I'm not coding, you'll find me
+            experimenting with new frameworks, contributing to open source, or designing data visualizations.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight"><span class="icon">&#128190;</span><span>Problem Solver</span></div>
+            <div class="highlight"><span class="icon">&#128293;</span><span>Fast Learner</span></div>
+            <div class="highlight"><span class="icon">&#127891;</span><span>Team Player</span></div>
+            <div class="highlight"><span class="icon">&#9889;</span><span>Detail Oriented</span></div>
+          </div>
+        </div>
+        <div class="about-card">
+          <ul class="facts">
+            <li><strong>Location:</strong> Thane, Maharashtra</li>
+            <li><strong>Studying:</strong> BSc IT, Mumbai University</li>
+            <li><strong>Focus:</strong> Web, Python, Data</li>
+            <li><strong>Currently:</strong> Intern at Velsync</li>
+            <li><strong>CGPA:</strong> 8.41 (Sem 4)</li>
+            <li><strong>Languages:</strong> English, Hindi, Marathi</li>
+          </ul>
+          <div class="tech-stack">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span>HTML/CSS</span><span>JavaScript</span><span>Python</span><span>Streamlit</span>
+              <span>Java</span><span>SQL</span><span>Excel</span><span>Git</span>
+              <span>VS Code</span><span>Figma</span><span>MediaPipe</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section reveal">
       <h3 class="section-title">Skills</h3>
-      <div class="skills">
-        <div class="skill" data-level="85"><span>HTML / CSS</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="75"><span>JavaScript</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="80"><span>Python</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="75"><span>Streamlit</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="65"><span>Java</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="70"><span>SQL</span><div class="bar"><i></i></div></div>
-        <div class="skill" data-level="80"><span>MS Excel</span><div class="bar"><i></i></div></div>
+      <div class="skills-category">
+        <div class="skill-group">
+          <h4>Frontend & Web</h4>
+          <div class="skills">
+            <div class="skill" data-level="90"><span>HTML / CSS</span><div class="bar"><i></i></div><span class="level">90%</span></div>
+            <div class="skill" data-level="80"><span>JavaScript</span><div class="bar"><i></i></div><span class="level">80%</span></div>
+            <div class="skill" data-level="70"><span>React Basics</span><div class="bar"><i></i></div><span class="level">70%</span></div>
+            <div class="skill" data-level="75"><span>Responsive Design</span><div class="bar"><i></i></div><span class="level">75%</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend & Data</h4>
+          <div class="skills">
+            <div class="skill" data-level="85"><span>Python</span><div class="bar"><i></i></div><span class="level">85%</span></div>
+            <div class="skill" data-level="80"><span>Streamlit</span><div class="bar"><i></i></div><span class="level">80%</span></div>
+            <div class="skill" data-level="70"><span>SQL</span><div class="bar"><i></i></div><span class="level">70%</span></div>
+            <div class="skill" data-level="65"><span>Java</span><div class="bar"><i></i></div><span class="level">65%</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools & Analytics</h4>
+          <div class="skills">
+            <div class="skill" data-level="85"><span>MS Excel</span><div class="bar"><i></i></div><span class="level">85%</span></div>
+            <div class="skill" data-level="75"><span>Data Visualization</span><div class="bar"><i></i></div><span class="level">75%</span></div>
+            <div class="skill" data-level="70"><span>Git / GitHub</span><div class="bar"><i></i></div><span class="level">70%</span></div>
+            <div class="skill" data-level="65"><span>Figma / UI Design</span><div class="bar"><i></i></div><span class="level">65%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-radar" aria-hidden="true">
+        <canvas id="radarChart" width="300" height="300"></canvas>
       </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section reveal">
       <h3 class="section-title">Projects</h3>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+      </div>
       <div class="cards">
-        <article class="card">
-          <h4>SecretVault</h4>
-          <p>A Python + Streamlit web app that encrypts and decrypts messages with a secret key. Includes a random key generator and an explainer of the classic A=1 to Z=26 cipher. Deployed on Streamlit Community Cloud.</p>
-          <div class="tags"><span>Python</span><span>Streamlit</span><span>Cryptography</span></div>
-          <a href="#" class="link">View project &rarr;</a>
+        <article class="card" data-tags="python streamlit cryptography">
+          <div class="card-image">
+            <div class="card-icon">&#128274;</div>
+            <span class="card-year">2024</span>
+          </div>
+          <div class="card-content">
+            <h4>SecretVault</h4>
+            <p>A Python + Streamlit web app that encrypts and decrypts messages with a secret key. Includes a random key generator and an explainer of the classic A=1 to Z=26 cipher. Deployed on Streamlit Community Cloud.</p>
+            <div class="tags"><span>Python</span><span>Streamlit</span><span>Cryptography</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
         </article>
 
-        <article class="card">
-          <h4>Jarvis Gesture Assistant</h4>
-          <p>A Jarvis-style assistant controlled by hand gestures through the webcam. Recognises fist, palm, peace, thumbs, pinch and pointing per hand, with voice commands and reminders.</p>
-          <div class="tags"><span>Python</span><span>MediaPipe</span><span>OpenCV</span></div>
-          <a href="#" class="link">View project &rarr;</a>
+        <article class="card" data-tags="python mediapipe opencv ai">
+          <div class="card-image">
+            <div class="card-icon">&#129304;</div>
+            <span class="card-year">2024</span>
+          </div>
+          <div class="card-content">
+            <h4>Jarvis Gesture Assistant</h4>
+            <p>A Jarvis-style assistant controlled by hand gestures through the webcam. Recognises fist, palm, peace, thumbs, pinch and pointing per hand, with voice commands and reminders.</p>
+            <div class="tags"><span>Python</span><span>MediaPipe</span><span>OpenCV</span><span>AI</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
         </article>
 
-        <article class="card">
-          <h4>Campus Voting Web Application</h4>
-          <p>A web application built in 2024 that lets students cast votes online for campus elections.</p>
-          <div class="tags"><span>Web</span><span>2024</span></div>
-          <a href="#" class="link">View project &rarr;</a>
+        <article class="card" data-tags="web">
+          <div class="card-image">
+            <div class="card-icon">&#127968;</div>
+            <span class="card-year">2024</span>
+          </div>
+          <div class="card-content">
+            <h4>Campus Voting Web Application</h4>
+            <p>A web application built in 2024 that lets students cast votes online for campus elections with real-time results and admin dashboard.</p>
+            <div class="tags"><span>Web</span><span>JavaScript</span><span>2024</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
         </article>
 
-        <article class="card">
-          <h4>AI Code Detection Tool</h4>
-          <p>A hackathon project from 2024 that explores detecting AI-generated code.</p>
-          <div class="tags"><span>AI</span><span>Hackathon</span><span>2024</span></div>
-          <a href="#" class="link">View project &rarr;</a>
+        <article class="card" data-tags="ai hackathon">
+          <div class="card-image">
+            <div class="card-icon">&#129302;</div>
+            <span class="card-year">2024</span>
+          </div>
+          <div class="card-content">
+            <h4>AI Code Detection Tool</h4>
+            <p>A hackathon project from 2024 that explores detecting AI-generated code using pattern analysis and machine learning classifiers.</p>
+            <div class="tags"><span>AI</span><span>Hackathon</span><span>2024</span><span>ML</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="python web">
+          <div class="card-image">
+            <div class="card-icon">&#128736;</div>
+            <span class="card-year">2025</span>
+          </div>
+          <div class="card-content">
+            <h4>E-Commerce Dashboard</h4>
+            <p>Full-stack e-commerce admin dashboard with sales analytics, inventory management, and real-time charts built during Velsync internship.</p>
+            <div class="tags"><span>Python</span><span>Streamlit</span><span>Charts</span><span>2025</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="web javascript">
+          <div class="card-image">
+            <div class="card-icon">&#128247;</div>
+            <span class="card-year">2025</span>
+          </div>
+          <div class="card-content">
+            <h4>Portfolio Website</h4>
+            <p>This very portfolio - a modern, responsive site with dark/light themes, particle animations, and dynamic project filtering.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>2025</span></div>
+            <a href="#" class="link">View project &rarr;</a>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section id="education" class="section reveal">
-      <h3 class="section-title">Education</h3>
+      <h3 class="section-title">Education & Experience</h3>
       <div class="timeline">
         <div class="t-item">
           <span class="t-date">2024 - Present</span>
           <h4>BSc Information Technology</h4>
-          <p>Mumbai University. Sem 4 CGPA: 8.41.</p>
+          <p>Mumbai University. Sem 4 CGPA: 8.41. Relevant coursework: Data Structures, Database Systems, Web Technologies, Computer Networks, Software Engineering.</p>
         </div>
         <div class="t-item">
           <span class="t-date">2026</span>
           <h4>Intern, Full Stack Web Development</h4>
-          <p>Velsync Internships. Building five projects from portfolio to e-commerce store.</p>
+          <p>Velsync Internships. Building five projects from portfolio to e-commerce store. Tech: HTML/CSS, JavaScript, Python, Streamlit, SQL, Git.</p>
+        </div>
+        <div class="t-item">
+          <span class="t-date">2023 - 2024</span>
+          <h4>HSC (Science)</h4>
+          <p>Maharashtra State Board. Percentage: 78%. Focus: Mathematics, Physics, Chemistry, Computer Science.</p>
+        </div>
+        <div class="t-item">
+          <span class="t-date">2024</span>
+          <h4>Hackathon Participant</h4>
+          <p>AI Code Detection Tool - Built ML-based detector for AI-generated code. Won recognition for innovative approach to pattern analysis.</p>
         </div>
       </div>
     </section>
@@ -122,24 +285,68 @@
     <!-- CONTACT -->
     <section id="contact" class="section reveal">
       <h3 class="section-title">Contact</h3>
-      <form id="contactForm" class="form" novalidate>
-        <label>Name
-          <input type="text" id="name" placeholder="Your name" required />
-        </label>
-        <label>Email
-          <input type="email" id="email" placeholder="you@example.com" required />
-        </label>
-        <label>Message
-          <textarea id="message" rows="5" placeholder="Say hello..." required></textarea>
-        </label>
-        <button type="submit" class="btn primary">Send Message</button>
-        <p id="formStatus" class="status" role="status"></p>
-      </form>
+      <div class="contact-grid">
+        <form id="contactForm" class="form" novalidate>
+          <label>Name
+            <input type="text" id="name" placeholder="Your name" required />
+          </label>
+          <label>Email
+            <input type="email" id="email" placeholder="you@example.com" required />
+          </label>
+          <label>Subject
+            <select id="subject" required>
+              <option value="">Select a topic</option>
+              <option value="project">Project Inquiry</option>
+              <option value="collab">Collaboration</option>
+              <option value="internship">Internship Opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea id="message" rows="5" placeholder="Say hello..." required></textarea>
+          </label>
+          <button type="submit" class="btn primary"><span>Send Message</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+          <p id="formStatus" class="status" role="status"></p>
+        </form>
+        <div class="contact-info">
+          <h4>Let's Connect</h4>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div class="contact-links">
+        <a href="mailto:angadpaswanap316960@gmail.com" class="contact-link">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>angadpaswanap316960@gmail.com</span>
+</a>
+
+<a href="https://github.com/Angad14-glitch" target="_blank" rel="noopener noreferrer" class="contact-link">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+    </svg>
+    <span>github.com/Angad14-glitch</span>
+</a>
+
+<a href="https://www.linkedin.com/in/angad-paswan-7a8767330/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" class="contact-link">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM7.12 24H.8V9h6.32v15z"/>
+    </svg>
+    <span>LinkedIn Profile</span>
+</a></div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Angad. Built with HTML, CSS and JavaScript.</p>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Angad. Built with HTML, CSS and JavaScript.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
