@@ -163,11 +163,10 @@ function type() {
 }
 type();
 
-// ===== COUNTER ANIMATION =====
 function animateCounters() {
   const counters = document.querySelectorAll(".stat-num");
   counters.forEach(counter => {
-    const target = parseInt(counter.dataset.target);
+    const target = parseFloat(counter.dataset.target);
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
@@ -175,10 +174,10 @@ function animateCounters() {
     const update = () => {
       current += step;
       if (current < target) {
-        counter.textContent = Math.floor(current);
+        counter.textContent = (target % 1 === 0) ? Math.floor(current) : current.toFixed(2);
         requestAnimationFrame(update);
       } else {
-        counter.textContent = target;
+        counter.textContent = (target % 1 === 0) ? target : target.toFixed(2);
       }
     };
     update();
